@@ -33,5 +33,5 @@ function displayString(revstring){
     //write to the page
     document.getElementById("msg").innerHTML = `Your string reversed is: ${revstring}`; //temprate latteral is recommended, lot cleaner
 //show the alert box
-    document.getElementById("alert").classList.remove
+    document.getElementById("alert").classList.remove("invisible");
 }
