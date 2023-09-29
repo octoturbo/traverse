@@ -53,23 +53,45 @@
     <!-- ==== Main Section ==== -->
     <main class="flex-shrink-0">
         <div class="container py-5 px-5 mt-5">
-            <h2 class="border-1 border-bottom border-dark">The Code for Traverse.</h2>
+            <h2 class="border-1 border-bottom border-dark">The Code for Traverse</h2>
             <!--Code Display: create one column to display code and another one display discription-->
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                        //Call Hello World
-                        function HelloWorld(){
-                            alert("hellow World");
-                        }
+                        //Get the string from the page
+//controller function
+function getValues(){
+    document.getElementById("alert").classList.add("invisible"); 
+    let userString = document.getElementById("userString").value;
+    let revString = reverseString(userString);
+    displayString(revString)
+}
+//Reverse the string
+//logic function
+function reverseString(userString){
+    let revString = [];
+    //reverse a string using a for loop
+    for (let index = userString.length - 1; index >= 0; index--) {
+        revString += userString[index];
+    }
+    return revString;
+}
+
+//Display the reversed string to the user
+//View Function
+function displayString(revstring){
+    //write to the page
+    document.getElementById("msg").innerHTML = `Your string reversed is: ${revstring}`; //temprate latteral is recommended, lot cleaner
+//show the alert box
+    document.getElementById("alert").classList.remove("invisible");
 }
                     </code>
                     </pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>The Code is structured in one function</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert witha message of "Hello World"</p>
+                    <p>The Code is structured in 3 functions</p>
+                    <h5>Traverse</h5>
+                    <p>Traverse is a combination of 3 functions that takes what user's typed in and reverse the order of the text"</p>
                 </div>
             </div>
         </div>
